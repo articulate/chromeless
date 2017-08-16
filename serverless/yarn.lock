@@ -1473,7 +1473,7 @@ mqtt-packet@^5.4.0:
     process-nextick-args "^1.0.7"
     safe-buffer "^5.1.0"
 
-mqtt@^2.11.0:
+mqtt@^2.11.0, mqtt@^2.9.2:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/mqtt/-/mqtt-2.11.0.tgz#39031df4a300532f3c64e61050dda212bf055eb0"
   dependencies:
@@ -1489,24 +1489,6 @@ mqtt@^2.11.0:
     reinterval "^1.1.0"
     split2 "^2.1.1"
     websocket-stream "^5.0.1"
-    xtend "^4.0.1"
-
-mqtt@^2.9.2:
-  version "2.9.3"
-  resolved "https://registry.yarnpkg.com/mqtt/-/mqtt-2.9.3.tgz#45c381a2c96f4c2ee2ea3a0b3c0c02ef063cd4c0"
-  dependencies:
-    commist "^1.0.0"
-    concat-stream "^1.6.0"
-    end-of-stream "^1.1.0"
-    help-me "^1.0.1"
-    inherits "^2.0.3"
-    minimist "^1.2.0"
-    mqtt-packet "^5.4.0"
-    pump "^1.0.2"
-    readable-stream "^2.3.3"
-    reinterval "^1.1.0"
-    split2 "^2.1.1"
-    websocket-stream "^5.0.0"
     xtend "^4.0.1"
 
 ms@0.7.1:
@@ -2212,17 +2194,6 @@ vise@2.x.x:
 walkdir@^0.0.11:
   version "0.0.11"
   resolved "https://registry.yarnpkg.com/walkdir/-/walkdir-0.0.11.tgz#a16d025eb931bd03b52f308caed0f40fcebe9532"
-
-websocket-stream@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/websocket-stream/-/websocket-stream-5.0.0.tgz#1d1318f0576ce20a12555372108ae9418a403634"
-  dependencies:
-    duplexify "^3.2.0"
-    inherits "^2.0.1"
-    readable-stream "^2.2.0"
-    safe-buffer "^5.0.1"
-    ws "^3.0.0"
-    xtend "^4.0.0"
 
 websocket-stream@^5.0.1:
   version "5.0.1"
