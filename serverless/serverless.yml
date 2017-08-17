@@ -33,7 +33,7 @@ provider:
       Resource: "*"
     - Effect: "Allow"
       Action:
-        - s3:PutObject
+        - s3:Put*
       Resource:
         Fn::Join:
           - ""
