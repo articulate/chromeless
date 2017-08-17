@@ -33,7 +33,7 @@ provider:
       Resource: "*"
     - Effect: "Allow"
       Action:
-        - s3:Put*
+        - s3:PutObject
       Resource:
         Fn::Join:
           - ""
@@ -41,7 +41,7 @@ provider:
             - ${self:custom.bucketName}
             - "/"
             - ${self:custom.keyPrefix}
-            - "/*"
+            - "*"
 
 plugins:
   - serverless-plugin-typescript
@@ -58,11 +58,7 @@ functions:
           sql: "SELECT * FROM 'chrome/new-session'"
     environment:
       CHROMELESS_S3_BUCKET_NAME: ${self:custom.bucketName}
-      CHROMELESS_S3_OBJECT_KEY_PREFIX:
-        Fn::Join:
-          - ""
-          - - ${self:custom.keyPrefix}
-            - "/"
+      CHROMELESS_S3_OBJECT_KEY_PREFIX: ${self:custom.keyPrefix}
       CHROMELESS_S3_BUCKET_URL:
         Fn::Join:
           - ""
