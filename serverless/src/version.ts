@@ -1,4 +1,4 @@
-import { version as chromelessVersion } from 'chromeless'
+import { version as chromelessVersion } from '@articulate/chromeless'
 
 const serverlessChromelessVersion = require('../package.json').version
 
