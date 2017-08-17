@@ -1,6 +1,6 @@
 {
-  "name": "chromeless",
-  "version": "1.3.0",
+  "name": "@articulate/chromeless",
+  "version": "1.3.0-beta1",
   "description": "🖥 Chrome automation made simple. Runs locally or headless on AWS Lambda.",
   "homepage": "https://github.com/graphcool/chromeless",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "clean": "rimraf dist",
     "coverage": "npm run ava",
     "precommit": "lint-staged",
-    "prepublishOnly": "npm test && npm run build",
+    "prepublishOnly": "npm run build",
     "prettier": "prettier --no-semi --single-quote --trailing-comma all --write \"src/**/*.ts\"",
     "release": "np",
     "test": "npm run tslint && npm run ava",

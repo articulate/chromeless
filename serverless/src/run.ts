@@ -1,5 +1,5 @@
 import 'source-map-support/register'
-import { LocalChrome, Queue, ChromelessOptions } from 'chromeless'
+import { LocalChrome, Queue, ChromelessOptions } from '@articulate/chromeless'
 import { connect as mqtt, MqttClient } from 'mqtt'
 import { createPresignedURL, debug } from './utils'
 
