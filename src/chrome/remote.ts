@@ -150,14 +150,22 @@ export default class RemoteChrome implements Chrome {
   }
 
   async process<T extends any>(command: Command): Promise<T> {
-    // wait until lambda connection is established
-    await this.connectionPromise
-
-    if (this.options.debug) {
-      console.log(`Running remotely: ${JSON.stringify(command)}`)
-    }
-
     const promise = new Promise<T>((resolve, reject) => {
+      try {
+        // wait until lambda connection is established
+        await this.connectionPromise
+      } catch (error) {
+        console.error(error)
+
+        reject(
+          new Error('Unable to connect Chromeless Proxy')
+        )
+      }
+
+      if (this.options.debug) {
+        console.log(`Running remotely: ${JSON.stringify(command)}`)
+      }
+
       this.channel.subscribe(this.TOPIC_RESPONSE, () => {
         this.channel.on('message', (topic, buffer) => {
           if (this.TOPIC_RESPONSE === topic) {
