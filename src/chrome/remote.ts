@@ -125,7 +125,7 @@ export default class RemoteChrome implements Chrome {
                   )
                 } else if (data.inactivity) {
                   console.warn(
-                    'Chromeless Proxy disconnected due to inactivity (no commands sent for 30 seconds).',
+                    'Chromeless Proxy disconnected due to inactivity (no commands sent for 5 seconds).',
                   )
                 } else {
                   console.warn(
