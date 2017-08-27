@@ -1,6 +1,6 @@
 version: '2'
 services:
-  server:
+  app:
     user: root
     environment:
       AWS_IOT_HOST: 'a2uo3spuacmrpd.iot.us-east-1.amazonaws.com'
