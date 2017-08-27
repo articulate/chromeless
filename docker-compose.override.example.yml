@@ -1,17 +1,26 @@
 version: '2'
 services:
-  app:
+  server:
     user: root
     environment:
       AWS_IOT_HOST: 'a2uo3spuacmrpd.iot.us-east-1.amazonaws.com'
       AWS_S3_BUCKET_NAME: 'articulate-us-dev'
       AWS_S3_KEY_PREFIX: 'snapshots/'
-      CHROMELESS_ENDPOINT_URL: see yarn deploy output
-      CHROMELESS_ENDPOINT_API_KEY: see yarn deploy output
       CHROMELESS_S3_OBJECT_KEY_PREFIX: 'snapshots/'
       REGION: 'us-east-1'
       STAGE: 'dev'
     volumes:
       - '~/.aws:/root/.aws'
-      - './test.js:/service/test.js'
+      - './serverless:/service'
+      - '/service/node_modules'
     build: .
+
+  client:
+    user: root
+    environment:
+      CHROMELESS_ENDPOINT_URL: see yarn deploy output
+      CHROMELESS_ENDPOINT_API_KEY: see yarn deploy output
+    volumes:
+      - '~/.aws:/root/.aws'
+      - '.:/service'
+      - '/service/node_modules'
