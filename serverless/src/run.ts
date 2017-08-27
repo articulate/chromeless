@@ -55,7 +55,8 @@ export default async (
           channel.end()
 
           await chrome.close()
-          await chromeInstance.kill()
+          // await chromeInstance.kill()
+          await setTimeout(() => chromeInstance.kill().catch(console.error), 4000)
 
           callback()
         })
@@ -65,9 +66,9 @@ export default async (
 
   const newTimeout = () =>
     setTimeout(async () => {
-      debug('Timing out. No requests received for 30 seconds.')
+      debug('Timing out. No requests received for 5 seconds.')
       await end({ inactivity: true })
-    }, 30000)
+    }, 5000)
 
   /*
     When we're almost out of time, we clean up.
