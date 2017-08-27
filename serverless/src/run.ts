@@ -55,8 +55,7 @@ export default async (
           channel.end()
 
           await chrome.close()
-          await setTimeout(() => chromeInstance.kill().catch(console.error), 4000)
-          // await chromeInstance.kill()
+          await chromeInstance.kill()
 
           callback()
         })
