@@ -1,4 +1,7 @@
 version: '2'
 services:
-  app:
-    build: .
+  server:
+    build: ./serverless
+
+  client:
+    build: ./

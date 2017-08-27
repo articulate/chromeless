@@ -1,13 +1,13 @@
-const { default: Chromeless } = require('@articulate/chromeless')
+const { default: Chromeless } = require('./dist/src')
 
 new Chromeless({ remote: true })
-  .goto('https://html5zombo.com')
+  .goto('http://html5zombo.com')
   .screenshot()
-  .end()
   .then(console.log)
+  .catch(console.error)
 
 new Chromeless({ remote: true })
-  .goto('https://html5zombo.com')
+  .goto('http://html5zombo.com')
   .pdf()
-  .end()
   .then(console.log)
+  .catch(console.error)
